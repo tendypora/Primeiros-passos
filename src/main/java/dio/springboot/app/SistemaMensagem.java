@@ -1,14 +1,59 @@
 package dio.springboot.app;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+//import javax.management.ConstructorParameters;
+//import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SistemaMensagem {
+public class SistemaMensagem implements CommandLineRunner {
+
+    private String nome = "TED";
+    private String email = "ted@Dio.com.br";
+    private List<Long> telefone = new ArrayList<>(Arrays.asList(88L, 55L, 93333333L));
+
+
+    @Override
+    public void run(String... args) throws Exception {
+        enviarMensagemBoasVindas(); // Chama o método para enviar mensagem de boas-vindas
+        enviarConfirmacaoCadastro(); // Chama o método para enviar confirmação de cadastro
+        
+      /*   System.out.println( "Mensagem enviada por: " + nome + "\nEmail: " +  email + "\nTelefone: " + telefone);
+        System.out.println("Seu Cadastro foi Aprovado");    */
+    }
+
+        public void enviarMensagemBoasVindas() {
+            System.out.println("Bem-vindo ao sistema, " + nome + "!");
+        }
+
+        public void enviarConfirmacaoCadastro() {
+            System .out.println("Mensagem enviada por: " + nome + 
+            "\nEmail: " + email + "\nTelefone" + telefone );
+            System.out.println("Seu cadastro foi aprovado!");
+        }
+          
+    
+    }   
+
+
+        /*
+        @Autowired
+        private Remetente noreply;
+        
+        /*@Autowired
+        private Remetente timeTech;
     public void enviarConfirmacaoCadastro() {
-        System.out.println("Confirmação de cadastro enviada com sucesso!");
+        System.out.println(noreply);
+        System.out.println("Seu cadastro foi aprovado");
     }
 
     public void enviarMensagemBoasVindas() {
+        timeTech.setEmail("tech@dio.com.br");
+        System.out.println(timeTech);
         System.out.println("Bem-vindo ao sistema!");
     }
-}
+   */ 
+
