@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 
 import dio.springboot.app.ConversorJson;
 import dio.springboot.app.ViaCepResponse;
-
+import dio.springboot.app.SistemaMensagem;
 
 @SpringBootApplication
 public class SpringPrimeirosPassosApplication {
@@ -25,4 +25,18 @@ public class SpringPrimeirosPassosApplication {
 			
 		};
 	}
+
+	@Bean
+	public CommandLineRunner run(SistemaMensagem sistema) throws Exception {
+		return args -> {
+			sistema.enviarConfirmacaoCadastro();
+			sistema.enviarMensagemBoasVindas();
+
+		};
+
+
+
+	}
+
+	
 }
