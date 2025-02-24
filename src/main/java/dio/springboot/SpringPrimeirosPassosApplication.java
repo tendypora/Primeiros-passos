@@ -29,9 +29,11 @@ public class SpringPrimeirosPassosApplication {
 	@Bean
 	public CommandLineRunner mensagensSistema(SistemaMensagem sistema) throws Exception {
 		return args -> {
+					
+			/* 
 			sistema.enviarConfirmacaoCadastro();
 			sistema.enviarMensagemBoasVindas();
-
+			*/
 		};
 
 
