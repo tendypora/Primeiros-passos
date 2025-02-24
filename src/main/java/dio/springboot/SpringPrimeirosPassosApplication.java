@@ -17,17 +17,17 @@ public class SpringPrimeirosPassosApplication {
 	}
 
 	@Bean
-	public CommandLineRunner run(ConversorJson conversor) throws Exception {
+	public CommandLineRunner consultaCep(ConversorJson conversor) throws Exception {
 		return args -> {
 			String json = "{\"cep\": \"01001-000\", \"logradouro\": \"Praça da Sé\", \"localidade\": \"São Paulo\"}";
 			ViaCepResponse response = conversor.converter(json);
 			System.out.println("Dados do CEP: " + response);
-			
+		
 		};
 	}
 
 	@Bean
-	public CommandLineRunner run(SistemaMensagem sistema) throws Exception {
+	public CommandLineRunner mensagensSistema(SistemaMensagem sistema) throws Exception {
 		return args -> {
 			sistema.enviarConfirmacaoCadastro();
 			sistema.enviarMensagemBoasVindas();
